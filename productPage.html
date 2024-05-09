@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina prodotto</title>
+    <!--Collegamento con style di bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!--Collego style.css-->
+    <link rel="stylesheet" href="style.css" />
+    <!--Icone di bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!--Inserisco favicon-->
+    <link rel="icon" type="image/png" href="assets/icons8-unicorno-96 (1).png" />
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Pacifico&family=Rowdies:wght@300;400;700&family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+
+      .container-fluid .img img {
+        width: 600px;
+      }
+
+      .info {
+        width: 50%;
+      }
+
+      .img {
+        width: 50%;
+        margin-top:7px;
+      }
+
+      #descrizione {
+        width: 580px;
+      }
+
+      .btn.btn-dark {
+        width: 550px;
+        padding: 10px;
+        font-weight: 800;
+        font-size: 20px;
+      }
+
+      .bg-rainbow {
+        background: rgb(255, 0, 224);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 0, 224, 0.8968837535014006) 0%,
+          rgba(217, 20, 255, 1) 35%,
+          rgba(0, 237, 255, 1) 100%
+        );
+
+        color:white;
+      }
+
+      .logo h1 {
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      .prodotti-suggeriti img {
+        width:200px;
+      }
+
+
+      .product {
+        width:600px;
+      }
+
+      .product h5:hover {
+        text-decoration:underline;
+        cursor: pointer;
+      }
+
+      .product img:hover {
+        cursor: pointer;
+      }
+
+      .breadcrumb {
+        width:600px;
+      }
+
+      .breadcrumb span:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      .max-righe {
+        white-space: pre-line; /* Per mantenere i ritorni a capo */
+        overflow: hidden; /* Nasconde il testo eccedente */
+        text-overflow: ellipsis; /* Aggiunge i tre puntini */
+        display: -webkit-box;
+        -webkit-line-clamp: 10; /* Numero massimo di righe */
+        -webkit-box-orient: vertical;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!--Creo NAV1 superiore-->
+    <nav class="d-flex justify-content-between bg-rainbow" style="height: 55px">
+      <div>
+        <ul class="d-flex list-unstyled gap-5 ms-5 mt-3">
+          <li class="fw-semibold">SHOP</li>
+          <li class="fw-semibold">MAGAZINE</li>
+          <li class="fw-semibold">COMMUNITY</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="d-flex list-unstyled gap-3 me-5 mt-3">
+          <li>Gift card</li>
+          <li>Negozi</li>
+          <li>Punti di ritiro</li>
+          <li>Eventi</li>
+          <li><div class="divider"></div></li>
+          <li>Assistenza clienti</li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--Creo nav2 con barra di ricerca-->
+    <div class="container mt-2">
+      <nav class="d-flex justify-content-between align-items-center mb-2" style="height: 55px;">
+        <div class="logo mt-4">
+         <a href="index.html" class="link-dark text-decoration-none "><h1>Barbie Official Shop <i class="bi bi-house-heart ms-2 fs-1"></i></h1></a> 
+        </div>
+        <div class="barra-ricerca">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Cerca tra tanti prodotti"
+          />
+          <button type="button" id="search-button">
+            <i class="fa-solid fa-magnifying-glass fs-6"></i>
+          </button>
+        </div>
+        <div class="icons-options position-relative mt-4">
+          <ul class="d-flex list-unstyled gap-5">
+            <li>
+              <a class="text-dark" href="#"
+                ><i class="fa-regular fa-heart fs-4"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="text-dark"
+                ><i class="fa-solid fa-cart-shopping fs-4"></i
+              ></a>
+            </li>
+            <li><i class="fa-regular fa-user fs-4"></i></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <hr />
+
+    <!--Creo un container-->
+    <div class="container-fluid d-flex mt-3">
+      <div class="img ps-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-chevron p-3 bg-white  rounded-3">
+            <li class="breadcrumb-item">
+                <a href="index.html" class="link-dark text-decoration-none "><span>Tutti gli articoli</span></a>
+              </a>
+            </li>
+            <li class="breadcrumb-item">
+              <span>Bambole e case delle bambole</span>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+             <span>Bambole</span> 
+            </li>
+          </ol>
+        </nav>
+        <img id="img"
+          src="https://th.bing.com/th/id/OIP.ZlIY99gYFJ-N5M99-QdYOgHaHa?rs=1&pid=ImgDetMain"
+        />
+      </div>
+
+      <div class="info d-flex flex-column">
+        <div>
+          <h6 class="text-secondary text-decoration-underline">Barbie</h6>
+        </div>
+        <div><h2 id="nome" class="mb-3">Nome prodotto</h2>
+          <span>Brand: Barbie</span>
+        </div>
+        <div>
+          <h3 id="prezzo" class="mb-3 mt-3">Prezzo</h3>
+          <span>Prezzo al dettaglio consigliato incl. 22% IVA</span>
+        </div>
+        <div>
+          <button type="button" class="btn btn-dark rounded-5 mt-3 mb-3">
+            Dove acquistare
+          </button>
+        </div>
+        <div><h5 class="mb-3 mt-3">Dettagli prodotto</h5></div>
+        <div>
+          <p id="descrizione">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+            porro facilis delectus doloribus sapiente consequatur atque rerum
+            accusamus eos nobis quidem temporibus sit iusto natus cum obcaecati
+            quo harum et inventore similique, cumque distinctio? Culpa veniam
+            nulla impedit dolore officia accusantium voluptatem sequi non.
+            Tempore eum assumenda veniam facilis dolores ea illum accusantium
+            sit. Nemo, vel. Cumque magni, adipisci eius modi commodi explicabo
+            tenetur minus. Optio odit excepturi perspiciatis, reiciendis eum
+            distinctio, nisi eligendi harum commodi, magni quaerat cum pariatur
+            sint fugiat voluptates perferendis. Quod necessitatibus dolores
+            voluptate ab cupiditate beatae velit eos, molestiae dignissimos
+            facere, odit culpa numquam. Saepe!
+          </p>
+        </div>
+      </div>
+      <!--Fine div info-->
+    </div> <!--fine container-->
+
+    <hr>
+    <div class="container">
+        <div><h3 class="mt-5 ms-4 mb-3">Potrebbe piacerti anche</h3></div>
+        <div class="prodotti-suggeriti d-flex gap-5 mt-5 ms-4">
+            <div class="product"><img src="https://images.mattel.net/image/upload/w_900,h_900,q_60,dpr_2.0,c_pad/shop-emea-prod/products/raxwakfyuxhkrnntcuik_030ec8b5-a6d4-43da-9553-24b5f533e798.jpg" alt="ken">
+            <h5 class="mt-4 text-decoration-underline ">Barbie The Movie - Ken, bambola da collezione con tuta da discoteca bianca e oro</h5>
+            </div>
+            <div class="product">
+                <img src="https://images.mattel.net/image/upload/w_900,h_900,q_60,dpr_2.0,c_pad/shop-emea-prod/products/xkj3xjkm1277a8ywg6wz_1d82849e-7f86-4eb4-b6c7-40009964304a.png" alt="barbie">
+                <h5 class="mt-4  ">Barbie Carriere 65 Anniversario Bambola Pop Star E 10 Accessori Tra Cui Palco Con Funzionalità Di Movimento</h5>
+            </div>
+            <div class="product">
+                <img src="https://images.mattel.net/image/upload/w_720,h_720,q_60,dpr_2.0,c_pad/shop-emea-prod/products/m2w4hnqi3imovabdsdly_71408b44-9d2a-4ff5-91b3-49bf2d003254.jpg" alt="barbie">
+                <h5 class="mt-4  ">Barbie The Movie - Ken da collezione con completo di jeans coordinato e boxer originale
+                </h5>
+            </div>
+            <div class="product">
+                <img src="https://images.mattel.net/image/upload/w_900,c_scale/shop-emea-prod/files/pychhumxhp3vzjfpau5f.png" alt="barbie">
+                <h5 class="mt-4 ">Barbie Pop Star Bambola</h5>
+            </div>
+            <div class="product">
+                <img src="https://images.mattel.net/image/upload/w_900,h_900,q_60,dpr_2.0,c_pad/shop-emea-prod/products/r9v18scp86sjl4ry5rw4_3968e54a-4c3b-4cad-9f5a-8e94806285bc.jpg" alt="barbie">
+                <h5 class="mt-4 ">Barbie Unicorno, Bambola Giocattolo Celebrativa Del 65 Anniversario Con Capelli Blu, Abito Rosa E Cucciolo Di Liocorno</h5>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+          <div class="col mb-3">
+            <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <p class="text-body-secondary">© 2024</p>
+          </div>
+      
+          <div class="col mb-3">
+      
+          </div>
+      
+          <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+      
+          <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+      
+          <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    <!--Collegamento con lo script di bootstrap-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!--Collegamento con fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/acd96ea700.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Collego script di product page-->
+    <script src="productPage.js"></script>
+  </body>
+</html>
