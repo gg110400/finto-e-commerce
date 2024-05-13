@@ -1,3 +1,5 @@
+/*CSS INDEX*/
+
 body {
     margin:0;
     padding:0;
@@ -50,7 +52,7 @@ hr {
 .text-carousel {
     position:absolute;
     top:200px;
-    left:130px;
+    left:110px;
     font-size:50px;
     color:white;
 }
@@ -77,13 +79,6 @@ hr {
     border:none;
 }
 
-.card-img-top {
-    border-radius:10px;
-    min-height: 330px;
-    min-width:230px;
-    height: auto;
-}
-
 
 
 .immagine {
@@ -92,29 +87,6 @@ hr {
     margin-top:20px;
     margin-bottom:100px;
 
-}
-
-
-.info {
-    width:550px;
-    margin-left:30px;
-    height:500px;
-    margin-top: 20px;
-    padding:20px;
-    margin-bottom:100px;
-}
-
-.spedizione {
-    margin-top:20px;
-    width:350px;
-    height:500px;
-    margin-bottom:100px;
- 
-}
-
-
-.height-personalized {
-    height:520px;
 }
 
 .carousel img {
@@ -158,6 +130,7 @@ hr {
 
 input[type="checkbox"] {
     width:18px;
+    cursor: pointer;
 }
 
 
@@ -167,6 +140,309 @@ input[type="checkbox"] {
     width:0 !important;
     display: none !important;
   }
+
+  .menu-schermo-piccolo {
+    display:none;
+  }
+
+
+  .xs {
+    display:none;
+  }
+
+  .logo-xs {
+    display:none;
+  }
+
+
+
+
+
+  /*MEDIA QUERIES*/
+
+  /* Stili di base */
+
+/* Stili per schermi di larghezza fino a 600px */
+@media only screen and (max-width: 600px) {
+    /* Stili specifici per schermi più piccoli */
+
+    .nav-2 {
+        display:none;
+    }
+
+    .text-carousel, .p-carousel {
+        display: none;
+
+    }
+
+    .menu-libri {
+        display:none !important;
+    }
+
+
+    .menu-schermo-piccolo {
+        display:flex;
+        gap:60px;
+        justify-content: space-between;
+       
+    }
+
+    .no-xs {
+        display:none !important;
+    }
+
+    .si-xs li {
+        cursor: pointer;
+    }
+
+    hr {
+        display:none;
+    }
+
+    .carousel {
+        display:none;
+    }
+
+    .xs {
+        display:block;
+        border-top:1px solid gainsboro;
+        border-bottom:1px solid gainsboro;
+    }
+
+
+   .title-section {
+    color: #F200A0;
+    position:relative;
+    right:130px;
+   }
+
+   .bigContainer{
+    flex-direction: column;
+   }
+
+   .logo-xs {
+    display: flex;
+    justify-content: center
+    ;
+    align-items: center;
+    margin-bottom:20px;
+    height:75px;
+     background-color: #F200A0;
+    width:100%;
+    color:white }
+
+   .logo-xs h1 {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    margin-top:20px;
+    font-size:30px;
+    margin-left:35px;
+   }
+
+   .divider {
+    background-color: #F200A0;
+    height:15px;
+    width:100%;
+   }
+
+   .aside {
+    display:none;
+   }
+
+
+  }
+  
+  /* Stili per schermi di larghezza compresa tra 601px e 900px */
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    /* Stili specifici per schermi di dimensioni medie */
+
+    
+    .nav-2 {
+        display:none;
+    }
+
+    .text-carousel, .p-carousel {
+        display: none;
+
+    }
+
+    .menu-libri {
+        display:none !important;
+    }
+
+
+    .menu-schermo-piccolo {
+        display:flex;
+        gap:60px;
+        justify-content: space-between;
+       
+    }
+
+    .no-xs {
+        display:none !important;
+    }
+
+    .si-xs li {
+        cursor: pointer;
+    }
+
+    hr {
+        display:none;
+    }
+
+    .carousel {
+        display:none;
+    }
+
+    .xs {
+        display:block;
+        border-top:10px solid #FF3EB5;
+        border-bottom:10px solid #FF3EB5;
+    }
+
+   .bigContainer {
+    flex-direction: column;
+  
+   }
+
+   .title-section {
+    color: #F200A0;
+    position: relative;
+    right:140px;
+    font-size: 28px;
+   }
+
+   .logo-xs {
+    display: flex;
+    justify-content: center
+    ;
+    align-items: center;
+    margin-bottom:20px;
+    height:75px;
+     background-color: #F200A0;
+    width:100%;
+    color:white }
+
+   .logo-xs h1 {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    margin-top:20px;
+    font-size:40px;
+    margin-left:35px;
+   }
+
+   .divider {
+    background-color: #F200A0;
+    height:15px;
+    width:100%;
+   }
+
+   .aside {
+    display:none;
+   }
+
+ 
+ 
+
+  }
+  
+  /* Stili per schermi di larghezza compresa tra 901px e 1200px */
+  @media only screen and (min-width: 901px) and (max-width: 1200px) {
+    /* Stili specifici per schermi di grandi dimensioni */
+     
+    .nav-2 {
+        display:none;
+    }
+
+    .text-carousel, .p-carousel {
+        display: none;
+
+    }
+
+    .menu-libri {
+        display:none !important;
+    }
+
+
+    .menu-schermo-piccolo {
+        display:flex;
+        gap:60px;
+        justify-content: space-between;
+       
+    }
+
+    .no-xs {
+        display:none !important;
+    }
+
+    .si-xs li {
+        cursor: pointer;
+    }
+
+    hr {
+        display:none;
+    }
+
+    .carousel {
+        display:none;
+    }
+
+    .xs {
+        display:block;
+        border-top:10px solid #FF3EB5;
+        border-bottom:10px solid #FF3EB5;
+    }
+
+   .bigContainer {
+    flex-direction: column;
+  
+   }
+
+   .title-section {
+    color: #F200A0;
+    position: relative;
+    right:140px;
+    font-size: 28px;
+   }
+
+   .logo-xs {
+    display: flex;
+    justify-content: center
+    ;
+    align-items: center;
+    margin-bottom:20px;
+    height:75px;
+     background-color: #F200A0;
+    width:100%;
+    color:white }
+
+   .logo-xs h1 {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    margin-top:20px;
+    font-size:40px;
+    margin-left:35px;
+   }
+
+   .divider {
+    background-color: #F200A0;
+    height:15px;
+    width:100%;
+   }
+
+   .aside {
+    display:none;
+   }
+  }
+  
+ 
+  
 
 
 

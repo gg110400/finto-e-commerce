@@ -46,7 +46,7 @@
   </head>
   <body>
     <!--Creo NAV1 superiore-->
-    <nav class="d-flex justify-content-between bg-pink" style="height: 50px">
+    <nav class=" no-xs d-flex justify-content-between bg-pink" style="height: 50px">
       <div>
         <ul class="d-flex list-unstyled gap-5 ms-5 mt-3">
           <li class="fw-semibold">SHOP</li>
@@ -55,7 +55,7 @@
         </ul>
       </div>
       <div>
-        <ul class="d-flex list-unstyled gap-3 me-5 mt-3">
+        <ul class="d-flex list-unstyled gap-3 me-5 mt-3 no-xs">
           <li>Gift card</li>
           <li>Negozi</li>
           <li>Punti di ritiro</li>
@@ -65,8 +65,10 @@
         </ul>
       </div>
     </nav>
+
+
     <!--Creo nav2 con barra di ricerca-->
-    <div class="container mt-2">
+    <div class="container mt-2 nav-2">
       <nav
         class="d-flex justify-content-between align-items-center mb-2"
         style="height: 54px"
@@ -105,17 +107,36 @@
     </div>
 
     <hr />
+
+    <div class="container-fluid logo-xs">
+      <h1>Barbie Official Shop <i class="fa-solid fa-star ms-3"></i></h1>
+    </div>
+
+
     <!--Creo menù con generi dei libri-->
-    <div class="container mt-3">
-      <nav class="d-flex justify-content-center">
+    <div class="container mt-3  menu">
+      <nav class="d-flex justify-content-center ">
         <ul class="d-flex gap-5 list-unstyled menu-libri">
           <li class="fw-semibold">Tutti gli articoli</li>
           <li class="fw-semibold">Tutti i brand</li>
           <li class="fw-semibold">Nuovi arrivi</li>
           <li class="fw-semibold">Offerte</li>
         </ul>
+        <ul class="menu-schermo-piccolo list-unstyled ">
+          <li class="fw-semibold">Tutti gli articoli</li>
+          <li class="fw-semibold">Tutti i brand</li>
+          <li class="fw-semibold">Offerte</li>
+        </ul>
       </nav>
     </div>
+
+
+    <!--Container solo per schermo piccolo-->
+    <div class="container-fluid xs p-0">
+      <img src="https://assets-global.website-files.com/63ecbc4db6b04204fb15265c/64c7aeae8d298441ef1c22c0_barbie.jpeg" class="w-100">
+    </div>
+
+
     <!--Creo un visual con dei libri-->
     <div id="carouselExampleFade" class="carousel slide carousel-fade">
       <div class="carousel-inner">
@@ -176,7 +197,7 @@
       </button>
     </div>
 
-    <!--Footer-->
+
 
     <!--Collegamento con lo script di bootstrap-->
     <script
@@ -192,9 +213,12 @@
     <!--Collegamento con il mio script-->
     <script src="script.js"></script>
 
+
+    <div class="divider"></div>
+    <!--Footer-->
     <hr />
     <div class="container">
-      <footer class="py-5">
+      <footer class="py-5 ">
         <div class="row">
           <div class="col-6 col-md-2 mb-3">
             <h5>Section</h5>

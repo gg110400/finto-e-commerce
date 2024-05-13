@@ -113,12 +113,316 @@
         width:550px;
         margin-left:60px;
       }
+
+      .nav-small {
+        display: none;
+      }
+
+      /* Stili di base */
+
+/* Stili per schermi di larghezza fino a 600px */
+@media only screen and (max-width: 600px) {
+  /* Stili specifici per schermi più piccoli */
+
+ .bg-rainbow{
+  display:none !important;
+ }
+
+ .nav-2 {
+  display:none;
+ }
+
+ .breadcrumb{
+  display:none;
+ }
+
+ .container-fluid {
+  flex-direction: column;
+ 
+ 
+ }
+
+ .info {
+  width:100%;
+ }
+
+
+ #img {
+  width:300px;
+ }
+
+
+ .btn.btn-dark {
+  width:450px;
+ }
+
+#descrizione {
+  width:450px;
+}
+
+.prodotti-suggeriti {
+  flex-direction: column;
+}
+
+.product {
+  width:100%;
+}
+
+.product {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.details {
+  text-align: center;
+}
+
+
+
+.nav-small {
+  display: block;
+  padding:7px;
+  color: white;
+  background: rgb(255, 0, 224);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 0, 224, 0.8968837535014006) 0%,
+          rgba(217, 20, 255, 1) 35%,
+          rgba(0, 237, 255, 1) 100%
+        );
+}
+
+.nav-small h1 {
+  font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+}
+
+}
+
+/* Stili per schermi di larghezza compresa tra 601px e 900px */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  /* Stili specifici per schermi di dimensioni medie */
+
+  .bg-rainbow{
+  display:none !important;
+ }
+
+ .nav-2 {
+  display:none;
+ }
+
+ .breadcrumb{
+  display:none;
+ }
+
+ .container-fluid {
+  flex-direction: column;
+
+ 
+ }
+
+
+
+ .info {
+  width:100%;
+ }
+
+
+ #img {
+  width:100%;
+ }
+
+ .img {
+  margin-left:110px;
+ }
+
+ .btn.btn-dark {
+  width:98%;
+ }
+
+#descrizione {
+  width:100%;
+}
+
+.prodotti-suggeriti {
+  flex-direction: column;
+}
+
+.product {
+  width:100%;
+}
+
+.product {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.details {
+  text-align: center;
+}
+
+.nav-small {
+  display: block;
+  padding:7px;
+  color: white;
+  background: rgb(255, 0, 224);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 0, 224, 0.8968837535014006) 0%,
+          rgba(217, 20, 255, 1) 35%,
+          rgba(0, 237, 255, 1) 100%
+        );
+}
+
+.nav-small h1 {
+  font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+}
+
+}
+
+/* Stili per schermi di larghezza compresa tra 901px e 1200px */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  /* Stili specifici per schermi di grandi dimensioni */
+  .bg-rainbow{
+  display:none !important;
+ }
+
+ .nav-2 {
+  display:none;
+ }
+
+ .breadcrumb{
+  display:none;
+ }
+
+ .container-fluid {
+  flex-direction: column;
+
+ 
+ }
+
+
+
+ .info {
+  width:100%;
+ }
+
+.img {
+  margin-left:270px;
+}
+
+
+
+ #img {
+  width:100%;
+ }
+
+
+ .btn.btn-dark {
+  width:98%;
+ }
+
+#descrizione {
+  width:100%;
+}
+
+.prodotti-suggeriti {
+  flex-direction: column;
+}
+
+.product {
+  width:100%;
+}
+
+.product {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.details {
+  text-align: center;
+}
+
+
+.nav-small {
+  display:block;
+  padding:7px;
+  color: white;
+  background: rgb(255, 0, 224);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 0, 224, 0.8968837535014006) 0%,
+          rgba(217, 20, 255, 1) 35%,
+          rgba(0, 237, 255, 1) 100%
+        );
+
+        
+}
+
+.nav-small h1 {
+  font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+}
+
+}
+
+
+@media only screen and (max-width:1300px) {
+  #img {
+    width:400px;
+  }
+
+
+  .title {
+    text-align: center;
+  }
+  
+
+  
+
+}
+
+
+
       
     </style>
   </head>
   <body>
+
+    <!--Nav visibile solo a schermo ridotto-->
     <!--Creo NAV1 superiore-->
-    <nav class="d-flex justify-content-between bg-rainbow" style="height: 55px">
+   <nav class="nav-small">
+    <h1 class="text-center  ">Barbie Official Shop</h1>
+   </nav>
+    
+
+    <!--Creo NAV1 superiore-->
+    <nav class="bg-rainbow d-flex justify-content-between " style="height: 55px">
       <div>
         <ul class="d-flex list-unstyled gap-5 ms-5 mt-3">
           <li class="fw-semibold">SHOP</li>
@@ -127,7 +431,7 @@
         </ul>
       </div>
       <div>
-        <ul class="d-flex list-unstyled gap-3 me-5 mt-3">
+        <ul class="d-flex list-unstyled gap-3 me-5 mt-3 no-xs">
           <li>Gift card</li>
           <li>Negozi</li>
           <li>Punti di ritiro</li>
@@ -139,7 +443,7 @@
     </nav>
 
     <!--Creo nav2 con barra di ricerca-->
-    <div class="container mt-2">
+    <div class="container mt-2 nav-2">
       <nav class="d-flex justify-content-between align-items-center mb-2" style="height: 55px;">
         <div class="logo mt-4">
          <a href="index.html" class="link-dark text-decoration-none "><h1>Barbie Official Shop <i class="bi bi-house-heart ms-2 fs-1"></i></h1></a> 
@@ -176,7 +480,7 @@
 
     <!--Creo un container-->
     <div class="container-fluid d-flex mt-3">
-      <div class="img ps-5">
+      <div class="img ps-0 ">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-chevron p-3 bg-white  rounded-3">
             <li class="breadcrumb-item">
@@ -212,7 +516,7 @@
             Dove acquistare
           </button>
         </div>
-        <div><h5 class="mb-3 mt-3">Dettagli prodotto</h5></div>
+        <div><h5 class="mb-3 mt-3 details">Dettagli prodotto</h5></div>
         <div>
           <p id="descrizione">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
@@ -235,7 +539,7 @@
 
     <hr>
     <div class="container">
-        <div><h3 class="mt-5 ms-4 mb-3">Potrebbe piacerti anche</h3></div>
+        <div><h3 class="mt-5 ms-4 mb-3 title">Potrebbe piacerti anche</h3></div>
         <div class="prodotti-suggeriti d-flex gap-5 mt-5 ms-4">
             <div class="product"><img src="https://images.mattel.net/image/upload/w_900,h_900,q_60,dpr_2.0,c_pad/shop-emea-prod/products/raxwakfyuxhkrnntcuik_030ec8b5-a6d4-43da-9553-24b5f533e798.jpg" alt="ken">
             <h5 class="mt-4 text-decoration-underline ">Barbie The Movie - Ken, bambola da collezione con tuta da discoteca bianca e oro</h5>
@@ -262,7 +566,7 @@
 
     <!--footer-->
     <div class="container">
-        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+        <footer class="row row-cols-2 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top px-5 ">
           <div class="col mb-3">
             <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
               <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>

@@ -6,7 +6,7 @@ row.classList.add("row");
 document.body.appendChild(row); // Aggiungo la riga al corpo del documento
 
 let titleSection = document.createElement("h3"); // Creo un nuovo elemento h2 per il titolo
-titleSection.innerHTML = `<h3 style="margin-left:270px">Tutti i prodotti<i class="fa-solid fa-star ms-3"></i></h3>`;
+titleSection.innerHTML = `<h3 style="margin-left:270px" class="title-section">Tutti i prodotti<i class="fa-solid fa-star ms-3"></i></h3>`;
 titleSection.classList.add("my-font");
 titleSection.classList.add("mt-3");
 
@@ -30,7 +30,7 @@ aside.classList.add("flex-shrink-0");
 aside.classList.add("p-3");
 aside.style.width = "280px"; // Setting width
 aside.innerHTML = `
-<div class="flex-shrink-0 p-3" style="width: 280px;">
+<div class="flex-shrink-0 aside" >
     <ul class="list-unstyled ps-0 ">
     <li class="fs-3 mb-4 fw-semibold  ms-4">Filtri  <i class="bi bi-sliders ms-2"></i></li>
       <li class="mb-1">
@@ -95,6 +95,11 @@ aside.innerHTML = `
             <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded ms-4 fs-5">
             <input type="checkbox" id="fascia-prezzo-3" class="me-2" value="50-100">
             <label for="fascia-prezzo-3">50-100 €</label>
+            </a></li>
+
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded ms-4 fs-5">
+            <input type="checkbox" id="fascia-prezzo-4" class="me-2" value="100+">
+            <label for="fascia-prezzo-4">100+ €</label>
             </a></li>
           </ul>
         </div>
@@ -167,6 +172,7 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
       marca.classList.add("marca-prodotto", "text-primary");
       let img = document.createElement("img");
       img.src = dato.imageUrl;
+      img.classList.add("card-img");
       img.style.width = "230px";
       img.classList.add("mt-3", "cursor-pointer");
       img.onclick = () =>
@@ -181,6 +187,7 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
       nome.classList.add("text-center", "mt-3", "mb-3");
       let prezzo = document.createElement("h5");
       prezzo.classList.add("fw-normal", "text-secondary");
+      prezzo.classList.add("prezzo-prodotto");
       prezzo.innerText = dato.price + " €";
       let bottone = document.createElement("button");
       bottone.innerText = "Aggiungi al carrello";
@@ -281,4 +288,175 @@ let princessSelect = document.getElementById("princess");
 barbieSelect.addEventListener("click", filtroPerBrand);
 frozenSelect.addEventListener("click", filtroPerBrand);
 princessSelect.addEventListener("click", filtroPerBrand);
+
+
+
+
+
+//Filtro per categoria
+
+function filtroPerCategoria() {
+  let cards = document.getElementsByClassName("product-card");
+  let titoloProdotto = document.getElementsByClassName("titolo-prodotto");
+  let bamboleSelect = document.getElementById("bambole");
+  let bamboleCollezioneSelect = document.getElementById("bambole-collezione");
+  let casaBamboleSelect = document.getElementById("casa-bambole");
+  let bamboleValue = bamboleSelect.checked;
+  let bamboleCollezioneValue = bamboleCollezioneSelect.checked;
+  let casaBamboleValue = casaBamboleSelect.checked;
+
+
+  // Controlla se nessuna checkbox è selezionata
+  if (!bamboleValue && !bamboleCollezioneValue && !casaBamboleValue) {
+    // Nessuna checkbox è selezionata, mostrare tutte le cards
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].classList.remove("invisible");
+    }
+    // Uscire dalla funzione in quanto non c'è bisogno di ulteriori filtri
+    return;
+}
+
+
+  for (let i = 0; i < cards.length; i++) {
+    let titolo = titoloProdotto[i].textContent.toLowerCase();
+    let showCard = false;
+
+    if (
+      (bamboleValue && (titolo.includes("bambola") || titolo.includes("bambole") )) ||
+      (bamboleCollezioneValue && titolo.includes("collezione")) ||
+      (casaBamboleValue &&  (titolo.includes("casa") || titolo.includes("castello")))
+    ) {
+      showCard = true;
+    }
+
+    if (showCard) {
+      cards[i].classList.remove("invisible");
+    } else {
+      cards[i].classList.add("invisible");
+    }
+  }
+}
+
+// Ottenere le referenze alle checkbox
+let bamboleSelect = document.getElementById("bambole");
+let bamboleCollezioneSelect = document.getElementById("bambole-collezione");
+let casaBamboleSelect = document.getElementById("casa-bambole");
+
+// Aggiungere un gestore di eventi per l'evento "click" a ciascuna checkbox
+bamboleSelect.addEventListener("click", filtroPerCategoria);
+bamboleCollezioneSelect.addEventListener("click", filtroPerCategoria);
+casaBamboleSelect.addEventListener("click", filtroPerCategoria);
+
+
+//Filtro per prezzo
+
+function filtroPerPrezzo() {
+  let cards = document.getElementsByClassName("product-card");
+  let prezzi = document.getElementsByClassName("prezzo-prodotto");
+  let primaFasciaPrezzoSelect = document.getElementById("fascia-prezzo-1");
+  let secondaFasciaPrezzoSelect = document.getElementById("fascia-prezzo-2");
+  let terzaFasciaPrezzoSelect = document.getElementById("fascia-prezzo-3");
+  let quartaFasciaPrezzoSelect=document.getElementById("fascia-prezzo-4");
+  let primaFasciaValue = primaFasciaPrezzoSelect.checked;
+  let secondaFasciaValue = secondaFasciaPrezzoSelect.checked;
+  let terzaFasciaValue = terzaFasciaPrezzoSelect.checked;
+  let quartaFasciaValue=quartaFasciaPrezzoSelect.checked;
+
+
+  // Controlla se nessuna checkbox è selezionata
+  if (!primaFasciaValue && !secondaFasciaValue && !terzaFasciaValue && !quartaFasciaValue) {
+    // Nessuna checkbox è selezionata, mostrare tutte le cards
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].classList.remove("invisible");
+    }
+    // Uscire dalla funzione in quanto non c'è bisogno di ulteriori filtri
+    return;
+}
+
+
+  for (let i = 0; i < cards.length; i++) {
+    let prezzo = parseFloat(prezzi[i].textContent.toLowerCase());
+    let showCard = false;
+
+    if (
+      (primaFasciaValue && (prezzo >= 0 && prezzo < 25)) ||
+      (secondaFasciaValue && (prezzo >= 25 && prezzo < 50)) ||
+      (terzaFasciaValue && (prezzo >= 50 && prezzo <= 100)) ||
+      (quartaFasciaValue && (prezzo > 100)) 
+    ) {
+      showCard = true;
+    }
+
+
+    if (showCard) {
+      cards[i].classList.remove("invisible");
+    } else {
+      cards[i].classList.add("invisible");
+    }
+  }
+}
+
+// Ottenere le referenze alle checkbox
+let primaFasciaPrezzoSelect = document.getElementById("fascia-prezzo-1");
+let secondaFasciaPrezzoSelect = document.getElementById("fascia-prezzo-2");
+let terzaFasciaPrezzoSelect = document.getElementById("fascia-prezzo-3");
+let quartaFasciaPrezzoSelect=document.getElementById("fascia-prezzo-4");
+
+// Aggiungere un gestore di eventi per l'evento "click" a ciascuna checkbox
+primaFasciaPrezzoSelect.addEventListener("click", filtroPerPrezzo);
+secondaFasciaPrezzoSelect.addEventListener("click", filtroPerPrezzo);
+terzaFasciaPrezzoSelect.addEventListener("click", filtroPerPrezzo);
+quartaFasciaPrezzoSelect.addEventListener("click", filtroPerPrezzo);
+
+//Filtro per età
+
+function filtroPerEtà() {
+  let cards = document.getElementsByClassName("product-card");
+  let titoloProdotto = document.getElementsByClassName("titolo-prodotto");
+  let età1Select = document.getElementById("fascia-età-1");
+  let età2Select = document.getElementById("fascia-età-2");
+  let età1Value = età1Select.checked;
+  let età2Value = età2Select.checked;
+
+
+
+  // Controlla se nessuna checkbox è selezionata
+  if (!età1Value && !età2Value) {
+    // Nessuna checkbox è selezionata, mostrare tutte le cards
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].classList.remove("invisible");
+    }
+    // Uscire dalla funzione in quanto non c'è bisogno di ulteriori filtri
+    return;
+}
+
+
+  for (let i = 0; i < cards.length; i++) {
+    let titolo = titoloProdotto[i].textContent.toLowerCase();
+    let showCard = false;
+
+    if (
+      (età1Value && (titolo.includes("(2-4)"))) ||
+      (età2Value && titolo.includes("(5+)")) 
+    ) {
+      showCard = true;
+    }
+
+    if (showCard) {
+      cards[i].classList.remove("invisible");
+    } else {
+      cards[i].classList.add("invisible");
+    }
+  }
+}
+
+// Ottenere le referenze alle checkbox
+let età1Select = document.getElementById("fascia-età-1");
+let età2Select = document.getElementById("fascia-età-2");
+
+
+// Aggiungere un gestore di eventi per l'evento "click" a ciascuna checkbox
+età1Select.addEventListener("click", filtroPerEtà);
+età2Select.addEventListener("click", filtroPerEtà);
+
 

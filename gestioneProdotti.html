@@ -53,8 +53,9 @@
       }
 
       #cards-container {
-        display: grid;
-        grid-template-columns: auto auto auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 30px;
       }
 
@@ -112,8 +113,6 @@
 
       }
 
-
-
       .fs {
         font-size:20px;
         margin-top:3px;
@@ -125,24 +124,30 @@
         display: none !important;
       }
 
-
       .start {
-        margin-left:124px;
+        margin-left:-20px;
       }
-     
 
-   
+
+      .margin-bottom{
+        margin-bottom: 100px;
+      }
+
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-white start ">
+
+    <div class="container margin-bottom">
+      <nav class="navbar navbar-expand-md navbar-dark bg-white  ">
       <a href="index.html" class="text-decoration-none"
-        ><h1 class="mt-5  ">
-          Barbie Official Shop <i class="bi bi-house-heart fs-1"></i></h1
+        ><h1 class="mt-5 start">
+          Barbie Official Shop</h1
       ></a>
     </nav>
+    </div>
+    
 
-    <div class="container-fluid d-flex justify-content-center  align-items-center mt-5">
+    <div class="container mt-5">
       <form class="w-75  mt-5 d-flex" role="search">
         <input type="search" class="form-control position-relative " id="search-input" placeholder="Search..." aria-label="Search">
         <button type="button" class="btn margine" id="search-button"   onclick="search()"><i class="fa-solid fa-magnifying-glass fs" id="lens"></i></button>

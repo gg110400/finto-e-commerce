@@ -113,7 +113,7 @@ const fetchData = async () => {
       card.style.width = "300px";
       card.classList.add("p-2");
       card.style.borderRadius = "10px";
-      card.style.height = "670px";
+      card.style.height = "690px";
       card.classList.add("d-flex", "flex-column", "align-items-center");
       let nomeProdotto = document.createElement("h3");
       nomeProdotto.innerText = dato.name;
@@ -139,6 +139,7 @@ const fetchData = async () => {
       let immagine = document.createElement("img");
       immagine.src = dato.imageUrl;
       immagine.style.width = "250px";
+      immagine.style.height="250px";
       immagine.style.marginBottom = "20px";
       let pulsanti = document.createElement("div");
       pulsanti.classList.add("d-flex");
@@ -204,6 +205,8 @@ const fetchData = async () => {
         modifiedIdInput.value = id.innerText;
         let modifiedImgInput = document.getElementById("modified-imageUrl");
         modifiedImgInput.value = immagine.src;
+  
+
       });
       elimina.addEventListener("click", function () {
         let formEliminaProdotto = document.getElementById("elimina-prodotti");
